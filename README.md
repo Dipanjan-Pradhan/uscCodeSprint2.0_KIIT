@@ -55,6 +55,3 @@ If you have feedback, ideas, or want to discuss DSA concepts, feel free to reach
 ### ✅ **License**
 
 This project is open for learning and sharing. Please respect fair use.
-
-
-## 🏁 **Let’s keep growing, one problem at a time!**
