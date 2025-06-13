@@ -4,17 +4,15 @@
 #include <string.h>
 
 #define MAX_SIZE 100
-bool canBuyIceCream(int budget, int *iceCreamPrices, int count)
-{
-    for (int i = 0; i < count; i++)
-    {
+bool canBuyIceCream(int budget, int *iceCreamPrices, int count){
+    for (int i = 0; i < count; i++){
         if (iceCreamPrices[i] == budget)
-        {
             return true;
-        }
     }
     return false;
 }
+
+
 int main()
 {
     int budget;
