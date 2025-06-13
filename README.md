@@ -3,7 +3,6 @@
 Welcome to my **CodeSprint 2.0** repository!
 This repo contains my daily coding practice, solutions, and notes as part of the 45-day **CodeSprint 2.0** challenge hosted by **USC.KIIT**.
 
----
 
 ### 📌 **About the Challenge**
 
@@ -14,13 +13,6 @@ This journey helps build:
 * Clean, optimized coding habits
 * A disciplined routine to tackle DSA systematically
 
----
-
-### 🗂️ **Repository Structure**
-
-```
-
----
 
 ### 🧩 **Topics Covered**
 
@@ -36,7 +28,6 @@ Some of the key DSA topics I’m covering during this sprint:
 * Graph Algorithms
 * And more!
 
----
 
 ### ⚡ **How to Use**
 
@@ -44,13 +35,11 @@ Some of the key DSA topics I’m covering during this sprint:
 * Feel free to fork this repo or clone it for reference.
 * Suggestions and improvements are always welcome!
 
----
 
 ### 📈 **My Goal**
 
 To develop a rock-solid foundation in DSA, build problem-solving discipline, and prepare myself for technical interviews and real-world coding challenges.
 
----
 
 ### ✨ **Connect with Me**
 
@@ -59,16 +48,13 @@ If you have feedback, ideas, or want to discuss DSA concepts, feel free to reach
 * 📫 dipanjanpradhan686@gmail.com
 * 💼 www.linkedin.com/in/dipanjan-pradhan-040907309
 
----
 
 **Happy Coding! 🚀💻**
 
----
 
 ### ✅ **License**
 
 This project is open for learning and sharing. Please respect fair use.
 
----
 
 ## 🏁 **Let’s keep growing, one problem at a time!**
