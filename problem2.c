@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-void checkShot(int n, int *shots, int *goodShot, int *badShot)
-{
-    for (int i = 0; i < n; i++)
-    {
+
+void checkShot(int n, int *shots, int *goodShot, int *badShot){
+    for (int i = 0; i < n; i++){
         if (*(shots + i) >= 7)
             (*goodShot)++;
         else if (*(shots + i) < 7)
@@ -12,8 +11,7 @@ void checkShot(int n, int *shots, int *goodShot, int *badShot)
     return;
 }
 
-int main()
-{
+int main(){
     int n, goodShot = 0, badShot = 0;
     scanf("%d", &n);
 
