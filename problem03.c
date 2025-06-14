@@ -33,5 +33,6 @@ int main(){
 
     printf("Total Critical Jam Hour = %d", jamHour);
     free(vehicles);
+    
     return 0;
 }
