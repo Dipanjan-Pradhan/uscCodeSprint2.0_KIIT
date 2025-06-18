@@ -93,7 +93,8 @@ int main() {
     DListNode* tail = NULL;
 
     printf("Enter %d space-separated integers:\n", n);
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) 
+    {
         int value;
         if (scanf("%d", &value) != 1) {
             printf("Invalid input. Exiting.\n");
