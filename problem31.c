@@ -4,13 +4,11 @@
 
 #define MAX_LEN 500
 
-// 🧱 Structure for each node of the linked list
 typedef struct Node {
     int val;
     struct Node* next;
 } Node;
 
-// 🎯 Create a new node with given value
 Node* createNode(int val) {
     Node* newNode = (Node*)malloc(sizeof(Node));
     newNode->val = val;
@@ -18,7 +16,6 @@ Node* createNode(int val) {
     return newNode;
 }
 
-// ➕ Append a node to the end of the list
 void append(Node** headRef, int val) {
     Node* newNode = createNode(val);
     if (*headRef == NULL) {
@@ -30,7 +27,6 @@ void append(Node** headRef, int val) {
     temp->next = newNode;
 }
 
-// 🔗 Merge two sorted linked lists into one
 Node* mergeSortedLists(Node* l1, Node* l2) {
     Node dummy;
     Node* tail = &dummy;
@@ -51,7 +47,6 @@ Node* mergeSortedLists(Node* l1, Node* l2) {
     return dummy.next;
 }
 
-// 👀 Display the linked list
 void printList(Node* head) {
     if (!head) {
         printf("[]\n");
@@ -67,7 +62,6 @@ void printList(Node* head) {
     printf("]\n");
 }
 
-// 🧹 Free up the memory used by the list
 void freeList(Node* head) {
     while (head) {
         Node* temp = head;
@@ -76,7 +70,6 @@ void freeList(Node* head) {
     }
 }
 
-// 🧾 Parse space-separated input into a linked list
 Node* parseInputLine(char* line) {
     Node* head = NULL;
     char* token = strtok(line, " \n");
@@ -90,7 +83,6 @@ Node* parseInputLine(char* line) {
     return head;
 }
 
-// ✅ Check if the linked list is sorted in non-decreasing order
 int isSorted(Node* head) {
     while (head && head->next) {
         if (head->val > head->next->val)
