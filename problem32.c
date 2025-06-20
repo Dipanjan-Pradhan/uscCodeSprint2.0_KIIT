@@ -87,7 +87,6 @@ Node* reverseSegment(Node *head, int left, int right) {
     return dummy.next;
 }
 
-// Main function
 int main() {
     char input[MAX_LEN];
     int left, right;
