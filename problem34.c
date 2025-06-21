@@ -43,7 +43,7 @@ int main() {
 
     printf("🔁 Enter postfix expression: ");
     if (fgets(input, sizeof(input), stdin) == NULL) {
-        printf("Couldn't read your input.\n"); 
+        printf("!! Invalid Input !!\n"); 
         return 1;
     }
 
