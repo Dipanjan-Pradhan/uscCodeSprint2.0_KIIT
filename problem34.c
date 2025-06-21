@@ -16,9 +16,9 @@ void initStack(Stack *stack) {
 
 void push(Stack *stack, const char *str) {
     if (stack->top < MAX_LEN - 1) {
-        stack->data[++(stack->top)] = strdup(str); // ✅ Keeps a copy of the string
+        stack->data[++(stack->top)] = strdup(str);
     } else {
-        printf("❌ Stack overflow! Too many elements.\n"); // ✅ Better message
+        printf("Stack overflow! Too many elements.\n"); 
         exit(1);
     }
 }
@@ -27,7 +27,7 @@ char *pop(Stack *stack) {
     if (stack->top >= 0) {
         return stack->data[(stack->top)--];
     } else {
-        printf("❌ Stack underflow! Nothing to pop.\n"); // ✅ Better message
+        printf("Stack underflow! Nothing to pop.\n");
         exit(1);
     }
 }
@@ -43,11 +43,10 @@ int main() {
 
     printf("🔁 Enter postfix expression: ");
     if (fgets(input, sizeof(input), stdin) == NULL) {
-        printf("❌ Couldn't read your input.\n"); // ✅ Spelling corrected from "Counldn't"
+        printf("Couldn't read your input.\n"); 
         return 1;
     }
 
-    // ✅ Remove trailing newline character if present
     size_t len = strlen(input);
     if (len > 0 && input[len - 1] == '\n') {
         input[len - 1] = '\0';
@@ -56,47 +55,45 @@ int main() {
     for (int i = 0; input[i] != '\0'; i++) {
         char ch = input[i];
 
-        if (isspace(ch)) continue; // ✅ Skip whitespace
+        if (isspace(ch)) continue;
 
         if (isalnum(ch)) {
             char operand[2] = {ch, '\0'};
             push(&stack, operand);
         } else if (isOperator(ch)) {
-            if (stack.top < 1) { // ✅ Check if there are at least 2 operands
-                printf("❌ Not enough operands for operator '%c'.\n", ch);
+            if (stack.top < 1) {
+                printf("Not enough operands for operator '%c'.\n", ch);
                 return 1;
             }
 
             char *right = pop(&stack);
             char *left = pop(&stack);
 
-            // ✅ Allocate memory for the new expression
-            size_t size = strlen(left) + strlen(right) + 2; // Operator + left + right + '\0'
+            size_t size = strlen(left) + strlen(right) + 2;
             char *newExpr = (char *)malloc(size);
 
-            if (newExpr == NULL) { // ✅ Safe check for malloc
-                printf("❌ Memory allocation failed.\n");
+            if (newExpr == NULL) {
+                printf("Memory allocation failed.\n");
                 return 1;
             }
 
-            sprintf(newExpr, "%c%s%s", ch, left, right); // ✅ Prefix expression
-            push(&stack, newExpr); // ✅ Uses strdup inside push()
+            sprintf(newExpr, "%c%s%s", ch, left, right); 
+            push(&stack, newExpr);
 
-            free(left);  // ✅ Prevent memory leaks
+            free(left); 
             free(right);
-            free(newExpr); // ✅ newExpr is strdup-ed inside push(), so we can safely free it here
+            free(newExpr); 
         } else {
-            printf("❌ Invalid character '%c' in input. Only use A-Z, a-z, 0-9, and + - * /.\n", ch); // ✅ More informative
+            printf("!! Invalid Input !!\n");
             return 1;
         }
     }
 
-    // ✅ Final result should be the only element on the stack
     if (stack.top == 0) {
-        printf("✅ Prefix expression: %s\n", stack.data[0]);
-        free(stack.data[0]); // ✅ Free memory
+        printf("Prefix expression: %s\n", stack.data[0]);
+        free(stack.data[0]);
     } else {
-        printf("❌ Something went wrong. Check your postfix expression.\n");
+        printf("!! Invalid Input: More than one element left in stack.\n");
     }
 
     return 0;
