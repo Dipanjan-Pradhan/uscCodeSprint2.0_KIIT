@@ -4,9 +4,8 @@
 
 #define MAX_STACK_SIZE 100005
 #define MAX_LABEL_LENGTH 21
-#define HASH_SIZE 10007  // A large prime for hash table
+#define HASH_SIZE 10007 
 
-// -------------------- Hash Map Implementation --------------------
 typedef struct Node {
     char label[MAX_LABEL_LENGTH];
     int count;
@@ -71,11 +70,9 @@ void decrementCount(const char* label) {
     }
 }
 
-// -------------------- Stack Implementation --------------------
 char stack[MAX_STACK_SIZE][MAX_LABEL_LENGTH];
 int top = -1;
 
-// -------------------- Command Storage --------------------
 typedef struct {
     char type[10];
     char value[MAX_LABEL_LENGTH];
@@ -85,14 +82,12 @@ Command commands[MAX_STACK_SIZE];
 int output[MAX_STACK_SIZE];
 int outputCount = 0;
 
-// -------------------- Main Logic --------------------
 int main() {
     int n;
     printf("Enter number of operations: ");
     scanf("%d", &n);
     getchar();
 
-    // Read all commands first
     for (int i = 0; i < n; i++) {
         char line[40];
         fgets(line, sizeof(line), stdin);
@@ -106,7 +101,6 @@ int main() {
         }
     }
 
-    // Process all commands after input is complete
     for (int i = 0; i < n; i++) {
         if (strcmp(commands[i].type, "PUSH") == 0) {
             strcpy(stack[++top], commands[i].value);
@@ -117,14 +111,13 @@ int main() {
             }
         } else if (strcmp(commands[i].type, "COUNT") == 0) {
             if (top == -1) {
-                output[outputCount++] = -1;  // special marker for EMPTY
+                output[outputCount++] = -1;
             } else {
                 output[outputCount++] = getCount(stack[top]);
             }
         }
     }
 
-    // Final output
     printf("\nOutput:\n");
     for (int i = 0; i < outputCount; i++) {
         if (output[i] == -1)
