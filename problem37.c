@@ -5,15 +5,13 @@
 #define MAX_OPS 10000
 #define MAX_LEN 50
 
-// Stack implementation
 typedef struct {
     int data[MAX_OPS];
     int top;
 } Stack;
 
-// Output structure for MIN results
 typedef struct {
-    char type[10]; // "VALUE" or "EMPTY"
+    char type[10];
     int value;
 } MinOutput;
 
@@ -33,7 +31,7 @@ int pop(Stack *s) {
     if (!isEmpty(s)) {
         return s->data[(s->top)--];
     }
-    return -1; // Sentinel value, but should be checked
+    return -1;
 }
 
 int peek(Stack *s) {
@@ -94,7 +92,7 @@ int main() {
 
     printf("Enter number of operations: ");
     scanf("%d", &n);
-    getchar(); // clear newline after number input
+    getchar();
 
     printf("Enter your %d operations:\n", n);
     for (int i = 0; i < n; i++) {
