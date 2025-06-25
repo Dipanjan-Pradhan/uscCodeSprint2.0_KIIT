@@ -57,6 +57,5 @@ int main() {
     else
         printf("%s\n", output);
 
-
     return 0;
 }
