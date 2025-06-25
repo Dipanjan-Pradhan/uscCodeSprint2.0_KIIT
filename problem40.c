@@ -67,7 +67,6 @@ void displayResult(int *result, int n){
 
 int main(){
   int n;
-
   int *arr = takeInput(&n);
   int *nextGreater = (int*)malloc(n * sizeof(int));
   int *result = (int*)malloc(n * sizeof(int));
