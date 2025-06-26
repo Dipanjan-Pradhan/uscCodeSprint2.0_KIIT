@@ -5,7 +5,6 @@
 
 #define MAX_LINE 10000
 
-// Function to count the number of integers in the input string
 int countNumbers(char *line){
     int count = 0, inNumber = 0;
     for(int i = 0; line[i]; i++){
@@ -21,7 +20,6 @@ int countNumbers(char *line){
     return count;
 }
 
-// Parse the input line into an array of integers
 int* parseTickets(char *line, int *n){
     *n = countNumbers(line);
     if (*n == 0){
@@ -44,7 +42,6 @@ int* parseTickets(char *line, int *n){
     return arr;
 }
 
-// Core logic: efficient time calculation
 int calculateTime(int *tickets, int n, int k){
     int time = 0;
     for (int i = 0; i < n; i++){
@@ -60,7 +57,6 @@ int main(){
     char input[MAX_LINE];
     int n, k;
 
-    // Take space-separated input in a single line
     printf("Enter the no of tickets array:\n");
     fgets(input, sizeof(input), stdin);
 
