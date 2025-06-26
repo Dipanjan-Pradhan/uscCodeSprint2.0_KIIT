@@ -5,7 +5,6 @@
 
 #define MAX_INPUT 10000
 
-// A simple double-ended queue using a circular array
 typedef struct {
     int *data;
     int front, rear, size;
@@ -43,7 +42,6 @@ void freeDeque(Deque *dq) {
     free(dq);
 }
 
-// Utility to count how many numbers are in the line
 int countNumbers(const char *line) {
     int count = 0, inside = 0;
     for (int i = 0; line[i]; i++) {
@@ -59,7 +57,6 @@ int countNumbers(const char *line) {
     return count;
 }
 
-// Converts the string input to an integer array
 int* parseInput(char *line, int *n) {
     *n = countNumbers(line);
     if (*n == 0) {
@@ -79,19 +76,15 @@ int* parseInput(char *line, int *n) {
     return arr;
 }
 
-// Comparison function for qsort
 int compare(const void *a, const void *b) {
     return (*(int*)a - *(int*)b);
 }
 
-// Core logic for determining the correct initial deck
 void performMagicTrick(int *cards, int n) {
-    // Sort the cards to ensure they're revealed in increasing order
     qsort(cards, n, sizeof(int), compare);
 
-    Deque *dq = createDeque(2 * n);  // Extra space for safety
+    Deque *dq = createDeque(2 * n);
 
-    // Reverse simulate the magician's steps
     for (int i = n - 1; i >= 0; i--) {
         if (!isEmpty(dq)) {
             int last = popBack(dq);
