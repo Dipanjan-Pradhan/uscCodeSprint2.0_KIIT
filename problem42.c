@@ -100,7 +100,6 @@ void performMagicTrick(int *cards, int n) {
         pushFront(dq, cards[i]);
     }
 
-    // Extract the final deck order from the deque
     int *finalDeck = (int*)malloc(n * sizeof(int));
     int idx = 0;
     while (!isEmpty(dq)) {
@@ -108,7 +107,6 @@ void performMagicTrick(int *cards, int n) {
         dq->front = (dq->front + 1) % dq->size;
     }
 
-    // Output the deck in increasing order
     qsort(finalDeck, n, sizeof(int), compare);
     printf("Initial deck order in increasing order:\n");
     for (int i = 0; i < n; i++) {
