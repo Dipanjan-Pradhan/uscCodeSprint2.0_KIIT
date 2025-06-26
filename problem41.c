@@ -64,10 +64,8 @@ int main(){
     printf("Enter the no of tickets array:\n");
     fgets(input, sizeof(input), stdin);
 
-    // Parse into array
     int *tickets = parseTickets(input, &n);
 
-    // Ask for index 'k'
     printf("Enter k(target visitor) = ");
     scanf("%d", &k);
 
@@ -77,7 +75,6 @@ int main(){
         return 1;
     }
 
-    // Compute and print result
     int result = calculateTime(tickets, n, k);
     printf("Total time = %d seconds\n", result);
 
