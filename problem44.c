@@ -2,8 +2,7 @@
 #include <stdlib.h>
 
 void getStudentsNo(int *n){
-    while (1)
-    {
+    while (1){
         printf("Enter the no of students (1 - 1000): ");
         scanf("%d", n);
         if(*n >= 1 && *n <= 1000) break;
@@ -84,9 +83,6 @@ int checkUnableStudent(int *student, int *sandwich, int n){
     }
     return n;
 }
-
-
-
 
 int main(){
     int n;
