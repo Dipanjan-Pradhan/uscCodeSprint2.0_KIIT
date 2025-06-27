@@ -63,7 +63,6 @@ int main() {
     int trapped = calculateTrappedWater(heights, n);
     printf("The total amount of trapped rainwater is: %d units\n", trapped);
 
-    // Free the memory used
     free(heights);
 
     return 0;
