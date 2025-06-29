@@ -22,7 +22,7 @@ void getUserInput(char **senate) {
 
     while (1) {
         printf("Enter the senate string (only R and D): ");
-        scanf("%10000s", *senate); // limit to MAX_LEN chars
+        scanf("%10000s", *senate); 
         if (isValidSenateString(*senate)) break;
         printf("Invalid input! Please use only 'R' and 'D'.\n");
     }
