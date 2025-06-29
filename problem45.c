@@ -5,7 +5,6 @@
 #define INITIAL_SIZE 10
 #define MAX_ROOM_JUMP 10000
 
-// Doubly-ended queue node structure
 typedef struct {
     int index;
     int value;
@@ -57,7 +56,6 @@ void getMaxRoomJump(int *k) {
     }
 }
 
-// Dynamic Programming + Deque solution
 int getMaxScore(int *arr, int n, int k) {
     int *dp = malloc(n * sizeof(int));
     if (!dp) {
@@ -72,11 +70,11 @@ int getMaxScore(int *arr, int n, int k) {
     dq[back++] = 0;
 
     for (int i = 1; i < n; i++) {
-        if (dq[front] < i - k) front++;  // remove out-of-range indices
+        if (dq[front] < i - k) front++;
 
         dp[i] = arr[i] + dp[dq[front]];
 
-        while (back > front && dp[i] >= dp[dq[back - 1]]) back--;  // maintain decreasing order
+        while (back > front && dp[i] >= dp[dq[back - 1]]) back--; 
         dq[back++] = i;
     }
 
