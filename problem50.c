@@ -6,10 +6,8 @@
 #define MAX_TILES 10000
 #define MAX_VALUE 1000000000
 
-void getTilesNo(int *n)
-{
-    while (1)
-    {
+void getTilesNo(int *n){
+    while (1){
         printf("Enter the no of tiles (1 - %d): ", MAX_TILES);
         scanf("%d", n);
         if (*n >= 1 && *n <= MAX_TILES)
@@ -18,10 +16,8 @@ void getTilesNo(int *n)
     }
 }
 
-int memoryCheck(void *ptr)
-{
-    if (!ptr)
-    {
+int memoryCheck(void *ptr){
+    if (!ptr){
         printf("Memory Allocation Failed\n");
         return 1;
     }
@@ -31,17 +27,14 @@ int memoryCheck(void *ptr)
 void getTilesValue(char **tiles, int n)
 {
     printf("Enter the tile number: ");
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++){
         long long num;
         scanf("%lld", &num);
         tiles[i] = (char *)malloc(MAX_DIGITS * sizeof(char));
-        if (memoryCheck(tiles[i]))
-        {
+        if (memoryCheck(tiles[i])){
             for (int j = 0; j < i; j++)
-            {
                 free(tiles[j]);
-            }
+            
             free(tiles);
             exit(1);
         }
@@ -49,8 +42,7 @@ void getTilesValue(char **tiles, int n)
     }
 }
 
-int compare(const void *a, const void *b)
-{
+int compare(const void *a, const void *b){
     const char *s1 = *(const char **)a;
     const char *s2 = *(const char **)b;
 
@@ -64,12 +56,10 @@ int compare(const void *a, const void *b)
     return strcmp(ba, ab);
 }
 
-void printMaxNumber(char **tiles, int n)
-{
+void printMaxNumber(char **tiles, int n){
     if (strcmp(tiles[0], "0") == 0)
         printf("0\n");
-    else
-    {
+    else{
         printf("\n");
         for (int i = 0; i < n; i++)
         {
@@ -80,8 +70,7 @@ void printMaxNumber(char **tiles, int n)
     }
 }
 
-int main()
-{
+int main(){
     int n;
     getTilesNo(&n);
 
