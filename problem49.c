@@ -62,9 +62,9 @@ int main()
     if (hasTripletSum(stones, n, target))
         printf("\ntrue\n"); // Triplet found
     else
-        printf("\nfalse\n"); // No triplet matches the target
+        printf("\nfalse\n"); 
     
 
-    free(stones); // Clean up
+    free(stones);
     return 0;
 }
