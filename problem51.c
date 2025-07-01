@@ -36,17 +36,12 @@ void getEnergyValues(int *arr, int n){
     }
 }
 
-
-// Comparator for qsort
-int compare(const void *a, const void *b)
-{
+int compare(const void *a, const void *b){
     return (*(int *)a - *(int *)b);
 }
 
-// Function to find the closest triplet sum
-int closestTripletSum(int *arr, int n, int target)
-{
-    qsort(arr, n, sizeof(int), compare); // Sort array first
+int closestTripletSum(int *arr, int n, int target){
+    qsort(arr, n, sizeof(int), compare);
 
     int closestSum = arr[0] + arr[1] + arr[2];
 
@@ -56,18 +51,15 @@ int closestTripletSum(int *arr, int n, int target)
         while (left < right){
             int currentSum = arr[i] + arr[left] + arr[right];
 
-            // If exact match, return immediately
             if (currentSum == target)
                 return currentSum;
 
-            // Update closestSum
             if (abs(currentSum - target) < abs(closestSum - target) || 
                 (abs(currentSum - target) == abs(closestSum - target) && currentSum > closestSum))
             {
                 closestSum = currentSum;
             }
 
-            // Move pointers
             if (currentSum < target)
                 left++;
             else
@@ -79,14 +71,12 @@ int closestTripletSum(int *arr, int n, int target)
 }
 
 
-int main()
-{
+int main(){
     int n, target;
     getCrystalNo(&n);
 
     int *arr = (int *)malloc(n * sizeof(int));
-    if (!arr)
-    {
+    if (!arr){
         printf("Memory allocation failed.\n");
         return 1;
     }
@@ -97,7 +87,6 @@ int main()
     int result = closestTripletSum(arr, n, target);
     printf("Output:\n%d\n", result);
 
-    // Free memory
     free(arr);
     return 0;
 }
