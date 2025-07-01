@@ -26,8 +26,7 @@ void getTarget(int *target){
 
 void getEnergyValues(int *arr, int n){
     printf("Enter the energy values of crystals: ");
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++){
         scanf("%d", &arr[i]);
         if(!(arr[i] >= MIN_VALUE && arr[i] <= MAX_VALUE)){
             printf("!! Invalid Input at index %d !!\n", i+1);
