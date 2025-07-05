@@ -60,7 +60,7 @@ char *readInputString() {
 
     printf("Enter the initial banner string (lowercase letters only): ");
     fgets(input, MAX_LENGTH, stdin);
-    input[strcspn(input, "\n")] = 0; // remove newline
+    input[strcspn(input, "\n")] = 0;
     return input;
 }
 
@@ -76,7 +76,6 @@ char *rearrangeString(char *s) {
         freq[s[i] - 'a']++;
     }
 
-    // Check if rearrangement is possible
     int maxFreq = 0;
     for (int i = 0; i < ALPHABET_SIZE; i++) {
         if (freq[i] > maxFreq)
@@ -87,7 +86,7 @@ char *rearrangeString(char *s) {
         char *empty = (char*)malloc(1);
         if (memoryCheck(empty)) return NULL;
         empty[0] = '\0';
-        return empty;  // impossible to rearrange
+        return empty;
     }
 
     CharFreq heap[ALPHABET_SIZE];
