@@ -70,8 +70,7 @@ void findDuplicateAndMissing(int *nums, int n, int *duplicate, int *missing)
 }
 
 // Displays the final result
-void displayResult(int duplicate, int missing)
-{
+void displayResult(int duplicate, int missing){
     printf("\n[%d, %d]\n", duplicate, missing);
 }
 
