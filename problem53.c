@@ -115,7 +115,7 @@ int main() {
         free(ranks[i]);
     }
     printf("]\n");
-
+ 
     free(scores);
     free(robots);
     free(ranks);
