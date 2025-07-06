@@ -8,7 +8,7 @@ public:
   int *vaccines;
   int *patients;
 
-  InputHandler() : n(0), vaccines(nullptr), patients(nullptr){}
+  InputHandler() : n(0), vaccines(nullptr), patients(nullptr) {}
 
   void getInput(){
     cout << "Enter the no of vaccines (and patients): ";
@@ -18,11 +18,11 @@ public:
     patients = new int[n];
 
     cout << "Enter the midichlorians count of each vaccine batch: ";
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
       cin >> vaccines[i];
 
     cout << "Enter the midichlorians count for each patient: ";
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
       cin >> patients[i];
   }
 
@@ -32,15 +32,15 @@ public:
   }
 };
 
-
 class CureChecker{
 public:
   static bool canCureAll(int *vaccines, int *patients, int n){
     sort(vaccines, vaccines + n);
     sort(patients, patients + n);
 
-    for(int i = 0; i < n; i++){
-      if(vaccines[i] <= patients[i]) return false;
+    for (int i = 0; i < n; i++){
+      if (vaccines[i] <= patients[i])
+        return false;
     }
     return true;
   }
@@ -49,10 +49,10 @@ public:
 class OutputHandler{
 public:
   static void printResult(bool result){
-    if(result)
+    if (result)
       cout << "Yes" << endl;
     else
-      cout << "No" << endl; 
+      cout << "No" << endl;
   }
 };
 
