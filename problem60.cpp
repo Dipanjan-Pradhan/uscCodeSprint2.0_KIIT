@@ -3,7 +3,6 @@
 #include <algorithm>
 using namespace std;
 
-// Handles input and validation
 class SpellInput {
 public:
     int n, m;
@@ -36,7 +35,6 @@ public:
     }
 };
 
-// Handles calculation logic
 class DuelPreparation {
 public:
     static long long calculateMana(const vector<long long>& merlin, const vector<long long>& morgana) {
@@ -52,7 +50,6 @@ public:
     }
 };
 
-// Handles output
 class ManaPrinter {
 public:
     static void print(long long mana) {
