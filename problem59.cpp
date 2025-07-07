@@ -3,7 +3,6 @@
 #include <string>
 using namespace std;
 
-// Handles reading and validating input
 class InputReader {
 public:
     string steps;
@@ -27,7 +26,6 @@ public:
     }
 };
 
-// Handles tracking Benny's path and counting slips
 class PathTracker {
 private:
     set<pair<int, int>> visited;
@@ -57,7 +55,6 @@ public:
     }
 };
 
-// Handles outputting the result
 class ResultPrinter {
 public:
     static void display(int slips) {
@@ -69,7 +66,6 @@ int main() {
     InputReader input;
     input.readInput();
 
-    // Check constraints and validity
     if (!input.isWithinConstraints()) {
         cout << "String length must be between 1 and 10^5." << endl;
         return 1;
